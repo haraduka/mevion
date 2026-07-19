@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="single_mevion">
+
+  <xacro:include filename="$(find mevion)/models/mevion_dae.urdf.xacro"/>
+
+  <xacro:mevion prefix="RL"/>
+
+  <link name="world"/>
+
+  <joint name="RL_world_joint" type="fixed">
+    <parent link="world"/>
+    <child link="RL_base_link"/>
+    <origin xyz="0 0.225 0" rpy="0 0 0"/>
+  </joint>
+
+</robot>

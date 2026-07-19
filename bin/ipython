@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+from IPython.terminal import embed
+from mevion.mevion_utils import Mevion
+# from mevion.samples.lerobot.lerobot_utils import LeRobotUtils
+
+def main():
+    print("WELCOME TO MEVION!")
+    print("Please create the mevion object like")
+    print("```")
+    print("m = Mevion(mode='quad')")
+    # print("l = LeRobotUtils()")
+    print("```")
+    print("and enjoy!")
+
+    ipshell = embed.InteractiveShellEmbed(config=embed.load_default_config(),
+                                          exit_msg="Exiting IPython, goodbye!")
+    try:
+        ipshell(local_ns=locals())
+    finally:
+        Mevion.shutdown_all()
+
+if __name__ == "__main__":
+    main()

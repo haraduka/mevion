@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<robot name="mevion">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="4.48986707996124e-05 1.56759680411714e-05 0.0271570776976561" rpy="0.0 -0.0 0.0"/>
+      <mass value="1.15231569296786"/>
+      <inertia ixx="0.00121639765481248" ixy="2.16045733589472e-06" ixz="1.27211558344771e-07" iyy="0.000930183088898648" iyz="7.71652399037108e-07" izz="0.00201898237273294"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevion/models/meshes/base_link.STL"/>
+      </geometry>
+      <material name="color"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevion/models/meshes/base_link.STL"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="shoulder_link">
+    <inertial>
+      <origin xyz="1.32391512477042e-05 -0.0409446319565604 0.0539290225644971" rpy="0.0 -0.0 0.0"/>
+      <mass value="1.3644125395524"/>
+      <inertia ixx="0.00124826945079962" ixy="7.71652399036369e-07" ixz="1.40973960628106e-06" iyy="0.00225976686875303" iyz="0.000129017482212155" izz="0.00163541860832696"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevion/models/meshes/shoulder_link.STL"/>
+      </geometry>
+      <material name="color"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevion/models/meshes/shoulder_link.STL"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="upper_link">
+    <inertial>
+      <origin xyz="-0.0277618483264825 -0.0012686382672129 0.125214854323048" rpy="0.0 -0.0 0.0"/>
+      <mass value="1.80094445183212"/>
+      <inertia ixx="0.00803749436721916" ixy="1.14800261763492e-07" ixz="0.000406578011332191" iyy="0.00930308292156413" iyz="-1.22606639516895e-06" izz="0.00145022373082752"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevion/models/meshes/upper_link.STL"/>
+      </geometry>
+      <material name="color"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevion/models/meshes/upper_link.STL"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="lower1_link">
+    <inertial>
+      <origin xyz="0.000216390735208159 0.00085993851271662 0.0518105566861265" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.759808237991183"/>
+      <inertia ixx="0.000385157367730232" ixy="2.12381732851174e-07" ixz="-6.77307827524159e-08" iyy="0.000439974465703987" iyz="1.32894830907232e-06" izz="0.000468001343308467"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevion/models/meshes/lower1_link.STL"/>
+      </geometry>
+      <material name="color"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevion/models/meshes/lower1_link.STL"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="lower2_link">
+    <inertial>
+      <origin xyz="-0.000278339581275338 0.0123874376852598 0.124865641413663" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.583365919550584"/>
+      <inertia ixx="0.000771948673443437" ixy="-7.69274924911199e-08" ixz="2.53703947046426e-07" iyy="0.00106516226878555" iyz="-4.63320416929162e-05" izz="0.000375373330701929"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevion/models/meshes/lower2_link.STL"/>
+      </geometry>
+      <material name="color"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevion/models/meshes/lower2_link.STL"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="wrist_link">
+    <inertial>
+      <origin xyz="-1.96082330388783e-16 -0.0041231568611668 0.0340020937943818" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.131493017924709"/>
+      <inertia ixx="7.37027067414564e-05" ixy="1.58073820480577e-20" ixz="2.25784009070445e-19" iyy="7.41887028724778e-05" iyz="-7.28567584499028e-06" izz="1.53903100360496e-05"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevion/models/meshes/wrist_link.STL"/>
+      </geometry>
+      <material name="color"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevion/models/meshes/wrist_link.STL"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="hand_link">
+    <inertial>
+      <origin xyz="0.000159003479216479 -0.000163984402889978 0.0525704717537405" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.978434240360148"/>
+      <inertia ixx="0.000520820242382646" ixy="-1.76299593288957e-06" ixz="8.17043569888491e-08" iyy="0.000400595546523087" iyz="1.65229042549845e-06" izz="0.000858089167834087"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevion/models/meshes/hand_link.STL"/>
+      </geometry>
+      <material name="color"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevion/models/meshes/hand_link.STL"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="gripper_link_left">
+    <inertial>
+      <origin xyz="-1.32198004197986e-08 0.0115784140352716 0.00240127722711736" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.122787167555386"/>
+      <inertia ixx="2.85978247230261e-05" ixy="3.08272354522243e-12" ixz="-9.47873944077953e-12" iyy="6.781592338682e-05" iyz="1.90382486267302e-06" izz="4.61876729265133e-05"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevion/models/meshes/gripper_link_left.STL"/>
+      </geometry>
+      <material name="color"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevion/models/meshes/gripper_link_left.STL"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="gripper_link_right">
+    <inertial>
+      <origin xyz="1.32198536631412e-08 -0.0115784140352595 0.00240127722700467" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.12278716755486"/>
+      <inertia ixx="2.85978247229801e-05" ixy="3.08277439819197e-12" ixz="9.47875029139586e-12" iyy="6.78159233867156e-05" iyz="-1.90382486266821e-06" izz="4.61876729263949e-05"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevion/models/meshes/gripper_link_right.STL"/>
+      </geometry>
+      <material name="color"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevion/models/meshes/gripper_link_right.STL"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <joint name="shoulder_yaw" type="revolute">
+    <parent link="base_link"/>
+    <child link="shoulder_link"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="-1.58" upper="1.58" effort="60" velocity="18.85" />
+    <origin xyz="0.0 0.0 0.058" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="shoulder_pitch" type="revolute">
+    <parent link="shoulder_link"/>
+    <child link="upper_link"/>
+    <axis xyz=" 0. 1.  0."/>
+    <limit lower="-0.91" upper="1.45" effort="60" velocity="18.85" /> <!---(-52.45, 83.25) -->
+    <origin xyz="0.0 -0.02 0.0580000000000024" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="elbow_pitch" type="revolute">
+    <parent link="upper_link"/>
+    <child link="lower1_link"/>
+    <axis xyz=" 0. 1.  0."/>
+    <limit lower="0.61" upper="2.69" effort="60" velocity="18.85" /> <!---(35, 154.15) -->
+    <origin xyz="0.0 0.02 0.3" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="elbow_yaw" type="revolute">
+    <parent link="lower1_link"/>
+    <child link="lower2_link"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="-1.58" upper="1.58" effort="17" velocity="37.5" />
+    <origin xyz="0.0 0.0 0.102000000000004" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="wrist_pitch" type="revolute">
+    <parent link="lower2_link"/>
+    <child link="wrist_link"/>
+    <axis xyz="0. 1. 0."/>
+    <limit lower="-2.06" upper="2.06" effort="17" velocity="37.5" /> <!---(-118.04, 118.04) -->
+    <origin xyz="0.0 -0.011000000000004 0.148" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="wrist_yaw" type="revolute">
+    <parent link="wrist_link"/>
+    <child link="hand_link"/>
+    <axis xyz=" 0.  0. 1."/>
+    <limit lower="-1.58" upper="1.58" effort="17" velocity="37.5" />
+    <origin xyz="0.0 0.0110000000000001 0.072" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="gripper_prismatic_left" type="prismatic">
+    <parent link="hand_link"/>
+    <child link="gripper_link_left"/>
+    <axis xyz="0. 1. 0."/>
+    <limit lower="0.0" upper="0.0415" effort="12" velocity="25.0" />
+    <origin xyz="0.0 0.0 0.105500000000004" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="gripper_prismatic_right" type="prismatic">
+    <mimic joint="gripper_prismatic_left" multiplier="1.0" offset="0.0"/>
+    <parent link="hand_link"/>
+    <child link="gripper_link_right"/>
+    <axis xyz=" 0. -1.  0."/>
+    <limit lower="0.0" upper="0.0415" effort="12" velocity="25.0" />
+    <origin xyz="0.0 0.0 0.105500000000004" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <material name="color">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+</robot>

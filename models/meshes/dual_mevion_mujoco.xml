@@ -1,0 +1,98 @@
+<mujoco model="dual_mevion">
+  <compiler angle="radian"/>
+  <asset>
+    <mesh name="base_link" file="meshes/base_link.STL"/>
+    <mesh name="shoulder_link" file="meshes/shoulder_link.STL"/>
+    <mesh name="upper_link" file="meshes/upper_link.STL"/>
+    <mesh name="lower1_link" file="meshes/lower1_link.STL"/>
+    <mesh name="lower2_link" file="meshes/lower2_link.STL"/>
+    <mesh name="wrist_link" file="meshes/wrist_link.STL"/>
+    <mesh name="hand_link" file="meshes/hand_link.STL"/>
+    <mesh name="gripper_link_left" file="meshes/gripper_link_left.STL"/>
+    <mesh name="gripper_link_right" file="meshes/gripper_link_right.STL"/>
+  </asset>
+  <worldbody>
+    <geom name="RF_base_link" pos="0.225 0 0" quat="0.7071 0 0 0.7071" type="mesh" mesh="base_link"/>
+    <geom name="RL_base_link" pos="-0.225 0 0" quat="0.7071 0 0 0.7071" type="mesh" mesh="base_link"/>
+    <body name="RF_shoulder_link" pos="0.225 0 0.058" quat="0.7071 0 0 0.7071">
+      <inertial pos="1.32392e-05 -0.0409446 0.053929" quat="0.447982 0.547549 0.449399 0.545476" mass="1.36441" diaginertia="0.00228538 0.00160981 0.00124826"/>
+      <joint name="RF_shoulder_yaw" pos="0 0 0" axis="0 0 1" range="-1.58 1.58" actuatorfrcrange="-60 60"/>
+      <geom type="mesh" mesh="shoulder_link"/>
+      <body name="RF_upper_link" pos="0 -0.02 0.058">
+        <inertial pos="-0.0277618 -0.00126864 0.125215" quat="0.706786 -0.0217636 -0.0216538 0.706761" mass="1.80094" diaginertia="0.00930308 0.00806249 0.00142522"/>
+        <joint name="RF_shoulder_pitch" pos="0 0 0" axis="0 1 0" range="-0.91 1.45" actuatorfrcrange="-60 60"/>
+        <geom type="mesh" mesh="upper_link"/>
+        <body name="RF_lower1_link" pos="0 0.02 0.3">
+          <inertial pos="0.000216391 0.000859939 0.0518106" quat="0.0180948 0.706629 0.0153262 0.707186" mass="0.759808" diaginertia="0.000468064 0.000439912 0.000385156"/>
+          <joint name="RF_elbow_pitch" pos="0 0 0" axis="0 1 0" range="0.61 2.69" actuatorfrcrange="-60 60"/>
+          <geom type="mesh" mesh="lower1_link"/>
+          <body name="RF_lower2_link" pos="0 0 0.102">
+            <inertial pos="-0.00027834 0.0123874 0.124866" quat="0.706594 -0.0238175 0.0233864 0.706832" mass="0.583366" diaginertia="0.00106826 0.000771949 0.000372275"/>
+            <joint name="RF_elbow_yaw" pos="0 0 0" axis="0 0 1" range="-1.58 1.58" actuatorfrcrange="-17 17"/>
+            <geom type="mesh" mesh="lower2_link"/>
+            <body name="RF_wrist_link" pos="0 -0.011 0.148">
+              <inertial pos="0 -0.00412316 0.0340021" quat="0.705803 -0.042917 0.042917 0.705803" mass="0.131493" diaginertia="7.5078e-05 7.37027e-05 1.4501e-05"/>
+              <joint name="RF_wrist_pitch" pos="0 0 0" axis="0 1 0" range="-2.06 2.06" actuatorfrcrange="-17 17"/>
+              <geom type="mesh" mesh="wrist_link"/>
+              <body name="RF_hand_link" pos="0 0.011 0.072">
+                <inertial pos="0.000159003 -0.000163984 0.0525705" quat="0.504603 0.495466 -0.502699 0.497174" mass="0.978434" diaginertia="0.000858095 0.000520846 0.000400564"/>
+                <joint name="RF_wrist_yaw" pos="0 0 0" axis="0 0 1" range="-1.58 1.58" actuatorfrcrange="-17 17"/>
+                <geom type="mesh" mesh="hand_link"/>
+                <body name="RF_gripper_link_left" pos="0 0 0.1055">
+                  <inertial pos="-1.32198e-08 0.0115784 0.00240128" quat="0.477749 0.521302 0.477749 0.521302" mass="0.122787" diaginertia="6.79822e-05 4.60214e-05 2.85978e-05"/>
+                  <joint name="RF_gripper_prismatic_left" pos="0 0 0" axis="0 1 0" type="slide" range="0 0.0415" actuatorfrcrange="-12 12"/>
+                  <geom type="mesh" mesh="gripper_link_left"/>
+                </body>
+                <body name="RF_gripper_link_right" pos="0 0 0.1055">
+                  <inertial pos="1.32199e-08 -0.0115784 0.00240128" quat="0.521302 0.477749 0.521302 0.477749" mass="0.122787" diaginertia="6.79822e-05 4.60214e-05 2.85978e-05"/>
+                  <joint name="RF_gripper_prismatic_right" pos="0 0 0" axis="0 -1 0" type="slide" range="0 0.0415" actuatorfrcrange="-12 12"/>
+                  <geom type="mesh" mesh="gripper_link_right"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="RL_shoulder_link" pos="-0.225 0 0.058" quat="0.7071 0 0 0.7071">
+      <inertial pos="1.32392e-05 -0.0409446 0.053929" quat="0.447982 0.547549 0.449399 0.545476" mass="1.36441" diaginertia="0.00228538 0.00160981 0.00124826"/>
+      <joint name="RL_shoulder_yaw" pos="0 0 0" axis="0 0 1" range="-1.58 1.58" actuatorfrcrange="-60 60"/>
+      <geom type="mesh" mesh="shoulder_link"/>
+      <body name="RL_upper_link" pos="0 -0.02 0.058">
+        <inertial pos="-0.0277618 -0.00126864 0.125215" quat="0.706786 -0.0217636 -0.0216538 0.706761" mass="1.80094" diaginertia="0.00930308 0.00806249 0.00142522"/>
+        <joint name="RL_shoulder_pitch" pos="0 0 0" axis="0 1 0" range="-0.91 1.45" actuatorfrcrange="-60 60"/>
+        <geom type="mesh" mesh="upper_link"/>
+        <body name="RL_lower1_link" pos="0 0.02 0.3">
+          <inertial pos="0.000216391 0.000859939 0.0518106" quat="0.0180948 0.706629 0.0153262 0.707186" mass="0.759808" diaginertia="0.000468064 0.000439912 0.000385156"/>
+          <joint name="RL_elbow_pitch" pos="0 0 0" axis="0 1 0" range="0.61 2.69" actuatorfrcrange="-60 60"/>
+          <geom type="mesh" mesh="lower1_link"/>
+          <body name="RL_lower2_link" pos="0 0 0.102">
+            <inertial pos="-0.00027834 0.0123874 0.124866" quat="0.706594 -0.0238175 0.0233864 0.706832" mass="0.583366" diaginertia="0.00106826 0.000771949 0.000372275"/>
+            <joint name="RL_elbow_yaw" pos="0 0 0" axis="0 0 1" range="-1.58 1.58" actuatorfrcrange="-17 17"/>
+            <geom type="mesh" mesh="lower2_link"/>
+            <body name="RL_wrist_link" pos="0 -0.011 0.148">
+              <inertial pos="0 -0.00412316 0.0340021" quat="0.705803 -0.042917 0.042917 0.705803" mass="0.131493" diaginertia="7.5078e-05 7.37027e-05 1.4501e-05"/>
+              <joint name="RL_wrist_pitch" pos="0 0 0" axis="0 1 0" range="-2.06 2.06" actuatorfrcrange="-17 17"/>
+              <geom type="mesh" mesh="wrist_link"/>
+              <body name="RL_hand_link" pos="0 0.011 0.072">
+                <inertial pos="0.000159003 -0.000163984 0.0525705" quat="0.504603 0.495466 -0.502699 0.497174" mass="0.978434" diaginertia="0.000858095 0.000520846 0.000400564"/>
+                <joint name="RL_wrist_yaw" pos="0 0 0" axis="0 0 1" range="-1.58 1.58" actuatorfrcrange="-17 17"/>
+                <geom type="mesh" mesh="hand_link"/>
+                <body name="RL_gripper_link_left" pos="0 0 0.1055">
+                  <inertial pos="-1.32198e-08 0.0115784 0.00240128" quat="0.477749 0.521302 0.477749 0.521302" mass="0.122787" diaginertia="6.79822e-05 4.60214e-05 2.85978e-05"/>
+                  <joint name="RL_gripper_prismatic_left" pos="0 0 0" axis="0 1 0" type="slide" range="0 0.0415" actuatorfrcrange="-12 12"/>
+                  <geom type="mesh" mesh="gripper_link_left"/>
+                </body>
+                <body name="RL_gripper_link_right" pos="0 0 0.1055">
+                  <inertial pos="1.32199e-08 -0.0115784 0.00240128" quat="0.521302 0.477749 0.521302 0.477749" mass="0.122787" diaginertia="6.79822e-05 4.60214e-05 2.85978e-05"/>
+                  <joint name="RL_gripper_prismatic_right" pos="0 0 0" axis="0 -1 0" type="slide" range="0 0.0415" actuatorfrcrange="-12 12"/>
+                  <geom type="mesh" mesh="gripper_link_right"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

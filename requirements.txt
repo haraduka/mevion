@@ -1,0 +1,7 @@
+# Dependencies that are not provided by rosdep on Ubuntu 24.04 / ROS 2 Jazzy.
+# Install these in a virtual environment created with --system-site-packages.
+ipython>=8
+scikit-robot==0.3.19
+scikit-robot-pyrender==0.1.50
+mujoco==3.2.3
+mujoco-python-viewer==0.1.4

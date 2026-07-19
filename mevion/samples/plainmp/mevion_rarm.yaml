@@ -1,0 +1,36 @@
+control_joint_names:
+  - RF_shoulder_yaw
+  - RF_shoulder_pitch
+  - RF_elbow_pitch
+  - RF_elbow_yaw
+  - RF_wrist_pitch
+  - RF_wrist_yaw
+
+only_self_collision_links:
+  - RF_base_link
+  - RL_base_link
+  - RL_shoulder_link
+  - RL_upper_link
+  - RL_lower1_link
+  - RL_lower2_link
+  - RL_wrist_link
+  - RL_hand_link
+  - RL_gripper_link_left
+  - RL_gripper_link_right
+
+self_collision_group_pairs:
+  # rarm vs rarm
+  - group1: [RF_gripper_link_left, RF_gripper_link_right, RF_hand_link]
+    group2: [RF_base_link, RF_shoulder_link, RF_upper_link]
+  # larm vs rarm (less likely)
+  - group1: [RL_gripper_link_left, RL_gripper_link_right, RL_hand_link, RL_wrist_link, RL_lower1_link, RL_lower2_link, RL_upper_link, RL_shoulder_link, RL_base_link]
+    group2: [RF_gripper_link_left, RF_gripper_link_right, RF_hand_link, RF_wrist_link, RF_lower1_link, RF_lower2_link, RF_upper_link, RF_shoulder_link, RF_base_link]
+
+custom_links:
+  larm_end_coords:
+    parent_link: RF_hand_link
+    position: [0, 0, 0.1]
+    rpy: [0.0, -1.57075, 0.0]
+
+include:
+  - collision_spheres.yaml
