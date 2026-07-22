@@ -8,7 +8,7 @@ for Powerful and High-Speed Dual-Arm Manipulation"
 Please refer to the following links for more information.
 
 - [Project Page](https://haraduka.github.io/mevion-hardware/)
-- [arXiv](TODO)
+- [arXiv](https://arxiv.org/abs/2607.17970)
 - [YouTube](https://youtu.be/huKRzo75_Ww)
 
 ## Hardware
